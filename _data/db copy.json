@@ -1,0 +1,12 @@
+{ 
+ "dogs": [{"id":1,"name":"Winslow","breed":"Terrier","gender":"Male","bio":"Division of Left Temporal Bone, Perc Endo Approach"},
+{"id":2,"name":"Adele","breed":"Pug","gender":"Female","bio":"Removal of Spacer from Sacrococcygeal Joint, Open Approach"},
+{"id":3,"name":"Ainslie","breed":"Cockerpoo","gender":"Female","bio":"Excision of Left Hand Bursa and Ligament, Perc Endo Approach"},
+{"id":4,"name":"Willy","breed":"Doberman","gender":"Male","bio":"Supplement R Main Bronc with Nonaut Sub, Perc Endo Approach"},
+{"id":5,"name":"Amandy","breed":"Cavapoo","gender":"Female","bio":"Dilate L Hand Art, Bifurc, w 2 Drug-elut, Perc Endo"},
+{"id":6,"name":"Richardo","breed":"Golden Doodle","gender":"Male","bio":"Introduce Electrol/Water Bal in Epidural Space, Perc"},
+{"id":7,"name":"Morgen","breed":"Labrador","gender":"Female","bio":"Supplement of Left Eye with Synth Sub, Open Approach"},
+{"id":8,"name":"Sosanna","breed":"Spaniel","gender":"Female","bio":"Drainage of Right Breast with Drainage Device, Open Approach"},
+{"id":9,"name":"Camilla","breed":"Bulldog","gender":"Female","bio":"Introduction of Oth Therap Subst into Eye, Extern Approach"},
+{"id":10,"name":"Constantia","breed":"Cokerpoo","gender":"Female","bio":"Extirpation of Matter from Subarachnoid Space, Perc Approach"}]
+}

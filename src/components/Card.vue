@@ -1,5 +1,5 @@
 <template>
- <article class="media box m-1" :class="{ [pinnedClass] : dog.pinned }">
+ <article class="media box m-1" :class="{ ['has-background-warning'] : dog.pinned }">
   <figure class="media-left">
     <p class="image is-128x128">
       <img src="https://bulma.io/images/placeholders/128x128.png">
@@ -38,7 +38,6 @@ export default {
   data() {
     return {
      uri: 'http://localhost:3000/dogs/' + this.dog.id,
-     pinnedClass: 'has-background-warning'
     }
   },
   methods: {

@@ -3,19 +3,15 @@
     <div class="container">
         <div class="column is-10 is-offset-1 p-2">
           <h1 class="is-size-4 has-text-weight-semibold mb-3">Dogs</h1>
-          <FilterNav />
+          <FilterNav @filterChange="currentFilter = $event" :currentFilter="currentFilter" />
           <div v-if="dogs.length" class="columns is-centered is-multiline is-justify-content-space-around">
-            <div v-for="dog in dogs" :key="dog.id" class="column is-6">
+            <div v-for="dog in filteredDogs" :key="dog.id" class="column is-6">
               <Card :dog="dog" @deletedDog="handleDelete" @toggledPin="handleToggle"/>
             </div>
            </div> 
            <div v-else>
                 <h1 class="is-size-4 has-text-weight-semibold mb-3">uh-ho! No dogs yet</h1>
           </div>
-              <!-- <router-link :to="{ name: 'DogDetail', 
-              params: { id: dog.id, name: dog.name }}">
-                {{ dog.id}}: {{ dog.name }}
-              </router-link> -->
         </div>
       </div>
   </section>
@@ -29,7 +25,8 @@ export default {
   components: {Card, FilterNav},
   data() {
     return {
-      dogs: []
+      dogs: [],
+      currentFilter: 'all'
     }
   },
   mounted() {
@@ -48,6 +45,17 @@ export default {
       return dog.id === id
     })
     toggle.pinned = !toggle.pinned
+    }
+  },
+  computed: {
+    filteredDogs(){
+      if(this.currentFilter === 'pinned'){
+        return this.dogs.filter(dog => dog.pinned)
+      }
+      if(this.currentFilter === 'notPinned'){
+        return this.dogs.filter(dog => !dog.pinned)
+      }
+      return this.dogs
     }
   }
 }

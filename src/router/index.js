@@ -17,7 +17,7 @@ const routes = [
     name: 'Register',
     component: Register
   },
-    {
+  {
     path: '/dogs',
     name: 'AllDogs',
     component: AllDogs
