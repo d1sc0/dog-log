@@ -23,4 +23,5 @@ pnpm-debug.log*
 *.sw?
 
 _bulma/
+_data/
 

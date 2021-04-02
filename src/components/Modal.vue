@@ -3,7 +3,7 @@
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">{{ modalTitle }}</p>
+      <p class="modal-card-title is-size-5">{{ modalTitle }}</p>
       <button class="delete" aria-label="close" @click="fireEvent"></button>
     </header>
     <section class="modal-card-body">

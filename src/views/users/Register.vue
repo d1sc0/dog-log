@@ -1,6 +1,7 @@
 <template>
-    <div class="container register">
-      <div class="columns mt-6">
+  <section class="section register">
+    <div class="container">
+      <div class="columns">
         <form @submit.prevent="handleSubmit" class="box column is-half is-offset-one-quarter p-6">
             <h1 class="is-size-4 has-text-weight-semibold">Create Account</h1>
               <div class="field mt-4">
@@ -53,10 +54,11 @@
         </div>
       </div>
     </div>
+  </section>
 </template>
 
 <script>
-import Modal from '../components/Modal.vue'
+import Modal from '../../components/Modal.vue'
 export default {
   name: 'Register',
   components: { Modal },
