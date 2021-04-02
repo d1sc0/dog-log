@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 import Register from '../views/users/Register.vue'
 import AllDogs from '../views/dogs/AllDogs.vue'
 import AddDog from '../views/dogs/AddDog.vue'
-import DogDetail from '../views/dogs/DogDetail.vue'
+import EditDog from '../views/dogs/EditDog.vue'
 import NotFound from '../views/NotFound.vue'
 
 const routes = [
@@ -12,11 +11,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
   },
   {
     path: '/register',
@@ -29,13 +23,13 @@ const routes = [
     component: AllDogs
   },
     {
-    path: '/dog/:id',
-    name: 'DogDetail',
-    component: DogDetail,
+    path: '/dogs/:id',
+    name: 'EditDog',
+    component: EditDog,
     props: true
   },
     {
-    path: '/dog/add',
+    path: '/dogs/add',
     name: 'AddDog',
     component: AddDog,
     props: true

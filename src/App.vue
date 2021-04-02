@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Navbar from './views/Navbar.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'Home',
@@ -19,6 +19,9 @@ export default {
 
 
 <style>
+@import './assets/styles.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
+
 body {
   background-color:hsl(0, 0%, 98%);
   height: 100vh;

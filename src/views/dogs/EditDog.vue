@@ -1,9 +1,9 @@
 <template>
-  <section class="section add-dog">
+  <section class="section edit-dog">
     <div class="container">
       <div class="columns">
         <form @submit.prevent="handleSubmit" class="box column is-half is-offset-one-quarter p-6">
-            <h1 class="is-size-4 has-text-weight-semibold">Add Dog</h1>
+            <h1 class="is-size-4 has-text-weight-semibold">Edit Dog</h1>
               <div class="field mt-4">
                 <label class="label">Name</label>
                 <p class="control">
@@ -39,7 +39,7 @@
 
               <div class="field is-grouped my-5">
                 <div class="control">
-                  <button class="button is-link is-rounded">Add Dog</button>
+                  <button class="button is-link is-rounded">Update Dog</button>
                 </div>
               </div>
         </form>
@@ -50,28 +50,38 @@
 
 <script>
 export default {
-  name: 'AddDog',
+  name: 'EditDog',
+  props: ['id'],
   data() {
     return { 
+      uri: 'http://localhost:3000/dogs/' + this.id,
       dogName: '',
       bio: '',
       gender: '',
       breed: '',
     }
   },
+  mounted() {
+     fetch(this.uri)
+     .then(res => res.json())
+     .then(data => {
+        this.dogName = data.name
+        this.breed = data.breed
+        this.gender = data.gender
+        this.bio = data.bio
+        })
+  },
   methods: {
     handleSubmit() {
-      let dog = {
+      let updatedDog = {
         name: this.dogName,
         breed: this.breed,
         gender: this.gender,
-        bio: this.bio,
-        pinned: false
+        bio: this.bio
       }
-      fetch('http://localhost:3000/dogs', { 
-      method: 'POST',
+    fetch(this.uri, { method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dog)
+      body: JSON.stringify(updatedDog)
       })
     .then(
       this.$router.push({ name: 'AllDogs' })
